@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+body{
+    background-color: black !important;
+    color: whitesmoke !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-item{
+    text-decoration: none ; 
+    color: white;
+    margin-right: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.homeSlide{
+    font-family:'HSBombaram21-Regular' ;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ::before : 가상선택자 - 존재하지 않은 요소를 존재하는 요소처럼 보여지게 하는 선택자 */
+.banner ::before{
+    position:absolute;
+    left:0;
+    width:100%;
+    height: 300px;
+    content :''; 
+    background: linear-gradient(to top, black, transparent);
 }
 
-.App-link {
-  color: #61dafb;
+.banner{
+    height: 600px; 
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'HSBombaram21-Regular';
+   
+    
+    
+}
+.title{
+    height: 60px;
+    font-size: 50px;
+    z-index: 1;
+  
+}
+.overview{
+    height: 60px;
+    width: 50%;
+    font-size: 20px;
+    z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* MovieCard css */
+.movie-card:hover  .poster {
+    opacity: 1;
+}
+
+.movie-card > a{
+    color: white;
+    text-decoration: none;
+}
+.poster{
+    height: 100%; width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0.9);
+    opacity: 0;
+    padding-left: 20px;
+    
+}
+.movie-card .poster > .movieGenre,
+.movie-card .poster > .movieVote{
+    display: flex;
+    gap:10px; 
+} 
+
+/* MovieDetail */
+.movie-details{
+    display: flex;
+    padding: 50px;
+    gap:50px;
+    font-family: 'HSBombaram21-Regular';
+}
+.movie-details .detail-poster > img{
+    width: 500px;
+}
+.movie-details .genre{
+    display: flex;
+    gap:10px;
+}
+.movie-details .genre + h1 {
+    font-size: 4em;
+    margin: 40px 0;
+}
+
+.movie-details h4+div{
+    display: flex;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid white ;
+}
+.movie-details .detail-overview{
+    border-bottom:  3px solid white;
+    padding-top:  20px ;
+    padding-bottom:  20px ;
+
+
+}
+
+/* Review */
+.review-box{
+    border: 3px solid white;
+    padding: 30px ;
+    font-family: 'HSBombaram21-Regular';
+}
+.review-item{
+    border-bottom: 3px solid white;
+    margin-bottom: 15px;
+}
+
+
+/* movies page */
+
+.movie-card-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'HSBombaram21-Regular';
+}
+
+
+@font-face {
+    font-family: 'HSBombaram21-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/HSBombaram21-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
